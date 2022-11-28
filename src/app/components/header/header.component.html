@@ -1,0 +1,12 @@
+<nav>
+    <h1>E-COMMERCE</h1>
+    <ul>
+        <li><a routerLink="">Home</a></li>
+        <li><a routerLink="products">Products</a></li>
+        <li><a routerLink="users">Users</a></li>
+        <li *ngIf="!loggedIn"><a routerLink="login">Login</a></li>
+        <li *ngIf="loggedIn" (click)="logout()"><a>Logout</a></li>
+        <li *ngIf="!loggedIn" (click)="register()"><a routerLink="users/create">Register</a></li>
+        <li><a routerLink="not-found">Cart()</a></li>
+    </ul>
+</nav>

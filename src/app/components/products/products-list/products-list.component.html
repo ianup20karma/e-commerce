@@ -1,0 +1,40 @@
+<div *ngIf="!loggedIn">
+    <h3 class="noLoginMsg">Please login to view/manage Products!</h3>
+</div>
+
+<div *ngIf="loggedIn">
+    <button (click)="createProduct()" class="createButton">{{'Create New Product' | uppercase}}</button>
+    <div class="cardsContainer">
+        <div class="card" *ngFor="let product of productsData">
+            <div><img class="fit-picture" src="{{product.image ? product.image : 'https://fakeimg.pl/350x200/'}}" alt="product.title"></div>
+            <div class="productInfoAndActions">
+                <div class="productInfo">
+                    <div>
+                        <span class="productTag">{{'Name:' | uppercase}}</span>
+                        <span>{{product.title | titlecase}}</span>
+                    </div>
+                    <div>
+                        <span class="productTag">{{'Category:' | uppercase}}</span>
+                        <span>{{product.category | titlecase}}</span>
+                    </div>
+                    <div>
+                        <span class="productTag">{{'Description:' | uppercase}}</span>
+                        <span title="{{product.description}}" class="description">{{product.description}}</span>
+                    </div>
+                    <div>
+                        <span class="productTag">{{'Rating:' | uppercase}}</span>
+                        <span>{{product.rating.rate}} ({{product.rating.count}})</span>
+                    </div>
+                    <div>
+                        <span class="productTag">{{'Price:' | uppercase}}</span>
+                        <span>{{product.price | currency:'INR'}}</span>
+                    </div>
+                </div>
+                <div appColor name="green" class="actions">
+                    <span *ngIf="isUserAdmin" appColor [color]="'red'" (click)="action('delete', product)"><i class="fa-solid fa-trash-can"></i></span>
+                    <span appColor [color]="'green'" (click)="action('edit', product)"><i class="fa fa-pencil"></i></span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

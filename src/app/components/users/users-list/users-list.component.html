@@ -1,0 +1,32 @@
+<div *ngIf="!loggedIn">
+    <h3 class="noLoginMsg">Please login to view/manage Users!</h3>
+</div>
+
+<div *ngIf="loggedIn">
+    <button (click)="createUser()">CREATE NEW USER</button>
+    <table>
+        <thead>
+            <tr>
+                <th>{{'ID' | uppercase}}</th>
+                <th>{{'Name' | uppercase}}</th>
+                <th>{{'Username' | uppercase}}</th>
+                <th>{{'Email' | uppercase}}</th>
+                <th>{{'ADMIN' | uppercase}}</th>
+                <th *ngIf="isUserAdmin">{{'ACTIONS' | uppercase}}</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let user of usersData; let i = index;">
+                <td>{{user.id}}</td>
+                <td>{{user.name}}</td>
+                <td>{{user.username}}</td>
+                <td>{{user.email}}</td>
+                <td>{{user.admin ? 'YES' : 'NO'}}</td>
+                <td *ngIf="isUserAdmin" class="actions">
+                    <span appColor [color]="'green'" (click)="action('edit', user)"><i class="fa fa-pencil"></i></span>
+                    <span appColor [color]="'red'" (click)="action('delete', user)"><i class="fa-solid fa-trash-can"></i></span>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

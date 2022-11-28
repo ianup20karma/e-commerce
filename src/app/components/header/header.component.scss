@@ -1,0 +1,36 @@
+:host {    
+    nav {
+        display: flex;
+        justify-content: space-between;
+        position: absolute;
+        right: 50px;
+        left: 50px;
+        top: 0;
+        padding-left: 50px;
+        background: rgba(0, 165, 129, 0);
+        border-radius: 0 0 15px 15px;
+        box-shadow: 0 0 40px rgba(8, 7, 16, 0.6);
+
+        h1 {
+            font-size: 40px;
+            font-weight: 900;
+        }
+    
+        ul {
+            display: inline-flex;
+            list-style-type: none;
+            align-items: center;
+            font-size: 25px;
+    
+            li {
+                padding-right: 70px;
+                cursor: pointer;
+    
+                a {
+                    text-decoration: none;
+                    color: inherit;
+                }
+            }
+        }
+    }
+}
