@@ -20,10 +20,10 @@ export class ProductsListComponent implements OnInit {
     this.common.loggedUserData.subscribe((res: any) => this.isUserAdmin = res.admin);
     if (this.loggedIn) {
       this.http.get<any>('http://localhost:3000/products')
-        .subscribe({
-          next: (res) => { this.productsData = res; },
-          error: () => { alert('Something went wrong!'); }
-        });
+        .subscribe(
+          (res) => this.productsData = res,
+          () => alert('Something went wrong!')
+        );
     }
   }
 
