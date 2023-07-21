@@ -1,0 +1,16 @@
+{
+    "workbench.colorCustomizations": {
+        "[CodeSandbox]": {
+            "gitDecoration.addedResourceForeground": "#81b88b",
+            "gitDecoration.modifiedResourceForeground": "#e2c08d",
+            "gitDecoration.deletedResourceForeground": "#c74e39",
+            "gitDecoration.renamedResourceForeground": "#73c991",
+            "gitDecoration.stageModifiedResourceForeground": "#e2c08d",
+            "gitDecoration.stageDeletedResourceForeground": "#c74e39",
+            "gitDecoration.untrackedResourceForeground": "#73c991",
+            "gitDecoration.ignoredResourceForeground": "#8c8c8c",
+            "gitDecoration.conflictingResourceForeground": "#e4676b",
+            "gitDecoration.submoduleResourceForeground": "#8db9e2"
+        }
+    }
+}
